@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dövme Stencil Dönüştürücü</title>
+    <link rel="stylesheet" href="/src/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <div class="control-group">
+          <h3>Görsel Yükleme</h3>
+          <div class="upload-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+            </svg>
+            Görsel Seç
+            <input type="file" id="imageInput" accept="image/*">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <h3>Stencil Tekniği</h3>
+          <div class="input-group">
+            <select id="technique" class="form-control">
+              <option value="dotwork">Nokta Çalışması</option>
+              <option value="stippleShading">Stipple Gölgelendirme</option>
+              <option value="tribalStyle">Tribal Stil</option>
+              <option value="watercolorStyle">Suluboya Stili</option>
+              <option value="geometricArt">Geometrik Sanat</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="techniqueSettings" class="control-group">
+          <!-- Dinamik ayarlar buraya gelecek -->
+        </div>
+
+        <div class="control-group">
+          <button id="process">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+            Stencil Oluştur
+          </button>
+          <button id="download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            İndir
+          </button>
+        </div>
+      </div>
+
+      <div class="preview-area">
+        <div class="canvas-container">
+          <div class="canvas-wrapper">
+            <h4>Kaynak Görsel</h4>
+            <canvas id="sourceCanvas"></canvas>
+          </div>
+          <div class="canvas-wrapper">
+            <h4>Stencil Önizleme</h4>
+            <canvas id="outputCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="control-group">
+          <h3>Boyut Ayarları</h3>
+          <div class="input-group">
+            <label>Genişlik</label>
+            <input type="range" id="width" min="100" max="2000" value="800" />
+            <div class="value-display">800px</div>
+          </div>
+          <div class="input-group">
+            <label>Yükseklik</label>
+            <input type="range" id="height" min="100" max="2000" value="1000" />
+            <div class="value-display">1000px</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
